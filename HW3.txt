@@ -4,3 +4,6 @@ Abbhinav Jayaraman: Helped with outlining the optional features, as well as idea
 Pranav Venkatesh: I helped brainstorm and came up with the idea we chose to move forward with.
 I collected information on backend services of UT's dining menus and HTML scraping functionalities
 in Kotlin. I also set-up the project repository.
+
+Craig Leeson: Helped contribute to initial brainstorm and did research on pulling information 
+from a database for menus/menu items. Created the wireframe outline for the app.
