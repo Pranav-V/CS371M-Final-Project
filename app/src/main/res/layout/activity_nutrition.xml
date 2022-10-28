@@ -7,23 +7,40 @@
     tools:context=".FoodDishActivity">
 
     <ImageView
-        android:id="@+id/foodImage"
+        android:id="@+id/food_image"
         android:layout_width="match_parent"
         android:layout_height="200sp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cinnamonrolls" />
+        app:srcCompat="@drawable/cinnamon_rolls_image" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/foodImage"
+        android:id="@+id/food_name"
+        app:layout_constraintTop_toBottomOf="@id/food_image"
         android:text="Mini Cinnamon Roll"
         android:textStyle="bold"
         android:textSize="36dp"
         android:textColor="@color/black"
         android:layout_margin="8sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/food_name"
+        app:layout_constraintVertical_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nutrition_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/nutrition_item" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

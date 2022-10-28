@@ -24,6 +24,6 @@ data class Food(
 //    @DrawableRes val imageResourceId: Int,
     val name: String,
     val allergens: String,
-    val nutrition: String,
+    val nutrition: List<String>,
     val ingredients: String
 )

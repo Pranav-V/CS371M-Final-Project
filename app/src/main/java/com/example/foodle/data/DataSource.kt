@@ -19,33 +19,47 @@ import com.example.foodle.R
 import com.example.foodle.model.Food
 
 /**
- * An object to generate a static list of dogs
+ * An object to generate a static list of foods
  */
 object DataSource {
+    val cinnamonNutritionList: List<String> = listOf(
+        "Serving Size: 1 roll",
+        "Calories: 270",
+        "Total Fat: 8.2g",
+        "Saturated Fat: 3.3g",
+        "Trans Fat: 0g",
+        "Cholesterol 14.5mg",
+        "Sodium: 274.3mg",
+        "Total Carbs: 42g",
+        "Dietary Fiber: 0g",
+        "Total Sugars 12.4g",
+        "Added Sugars: 0g",
+        "Protein: 6g"
+    )
 
     val foods: List<Food> = listOf(
         Food(
             "Mini Cinnamon Roll",
             "7",
-            "sunbathing",
+            cinnamonNutritionList,
             "cheese"
         ),
         Food(
             "Sweet Potato Muffin",
             "4",
-            "sleeping in dangerous places",
+            listOf(),
             "cheese"
         ),
         Food(
             "Beef Congee",
             "2",
-            "stealing socks",
+            listOf(),
             "cheese"
         ),
         Food(
             "Banana",
             "8",
-            "meeting new animals",
+            listOf(),
             "cheese"
         )
     )
