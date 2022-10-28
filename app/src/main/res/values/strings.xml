@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Foodle</string>
+    <string name="allergens_title">Allergens: %1$s</string>
 </resources>

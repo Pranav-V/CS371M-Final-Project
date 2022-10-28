@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="200sp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:src="@drawable/cookout" />
 
     <ImageButton
         android:id="@+id/settingsButton"
@@ -41,6 +41,7 @@
             android:useDefaultMargins="true">
 
             <Button
+                android:id="@+id/jclbutton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -48,6 +49,7 @@
                 android:text="JCL" />
 
             <Button
+                android:id="@+id/j2button"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -55,6 +57,7 @@
                 android:text="J2" />
 
             <Button
+                android:id="@+id/fastj2button"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -62,13 +65,15 @@
                 android:text="FAST @ J2" />
 
             <Button
+                android:id="@+id/kinsbutton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:text="KINSOLVING" />
+                android:text="KINS" />
 
             <Button
+                android:id="@+id/jestapizzabutton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -76,6 +81,7 @@
                 android:text="JESTA' PIZZA" />
 
             <Button
+                android:id="@+id/littlefieldbutton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -83,6 +89,7 @@
                 android:text="LITTLEFIELD CAFE" />
 
             <Button
+                android:id="@+id/cypressbendbutton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -90,6 +97,7 @@
                 android:text="CYPRESS BEND CAFE" />
 
             <Button
+                android:id="@+id/jcmbutton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
