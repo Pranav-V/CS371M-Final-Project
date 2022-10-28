@@ -1,7 +1,8 @@
 package com.example.foodle
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodle.adapter.DiningHallCardAdapter
@@ -24,6 +25,6 @@ class DiningHallActivity : AppCompatActivity() {
         rv.setHasFixedSize(true)
 
         // Enable up button for backward navigation
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
     }
 }

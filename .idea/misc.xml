@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/C/AndroidStudioProjects/CS371M-Final-Project/app/src/main/res/layout/activity_dining_hall.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/C/AndroidStudioProjects/CS371M-Final-Project/app/src/main/res/layout/activity_food_dish.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/C/AndroidStudioProjects/CS371M-Final-Project/app/src/main/res/layout/activity_main.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/C/AndroidStudioProjects/Foodle/app/src/main/res/layout/activity_dining_hall.xml" value="0.25" />
         <entry key="..\:/Users/C/AndroidStudioProjects/Foodle/app/src/main/res/layout/activity_dininghall.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/C/AndroidStudioProjects/Foodle/app/src/main/res/layout/activity_food_dish.xml" value="0.36666666666666664" />
