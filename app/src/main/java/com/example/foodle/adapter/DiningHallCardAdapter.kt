@@ -16,7 +16,10 @@ import com.google.android.material.card.MaterialCardView
  * Adapter to inflate the appropriate list item layout and populate the view with information
  * from the appropriate data source
  */
-class DiningHallCardAdapter(
+class
+
+
+DiningHallCardAdapter(
     private val context: Context?,
     private val layout: Int
 ): RecyclerView.Adapter<DiningHallCardAdapter.FoodCardViewHolder>() {

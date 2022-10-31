@@ -40,25 +40,25 @@ object DataSource {
     val foods: List<Food> = listOf(
         Food(
             "Mini Cinnamon Roll",
-            "7",
+            "Milk, Eggs, Wheat, Soybeans",
             cinnamonNutritionList,
-            "cheese"
+            ""
         ),
         Food(
-            "Sweet Potato Muffin",
-            "4",
+            "Housemade Hummus",
+            "None",
             listOf(),
             "cheese"
         ),
         Food(
-            "Beef Congee",
-            "2",
+            "Candied Sweet Potatoes",
+            "Soybeans",
             listOf(),
             "cheese"
         ),
         Food(
-            "Banana",
-            "8",
+            "Mexican Lasagna",
+            "Milk, Eggs",
             listOf(),
             "cheese"
         )
