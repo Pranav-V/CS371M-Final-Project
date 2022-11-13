@@ -3,4 +3,13 @@
     <string name="allergens_title">Allergens: %1$s</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="littlefield_cafe">Littlefield Cafe</string>
+    <string name="jesta_pizza">Jesta\' Pizza</string>
+    <string name="kins">Kins</string>
+    <string name="fast_j2">Fast @ J2</string>
+    <string name="j2">J2</string>
+    <string name="jester_city_limits">Jester City Limits</string>
+    <string name="jester_city_market">Jester City Market</string>
+    <string name="cypress_bend_cafe">Cypress Bend Cafe</string>
+    <string name="foodle">Foodle</string>
 </resources>

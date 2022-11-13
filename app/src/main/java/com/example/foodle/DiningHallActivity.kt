@@ -23,8 +23,8 @@ class DiningHallActivity : AppCompatActivity() {
         )
 
         val diningHallName = extras?.get("diningHallName").toString()
-        val diningHallTitle = findViewById<TextView>(R.id.dining_hall_title)
-        diningHallTitle.text = diningHallName
+//        val diningHallTitle = findViewById<TextView>(R.id.dining_hall_title)
+//        diningHallTitle.text = diningHallName
 
         setDate()
 

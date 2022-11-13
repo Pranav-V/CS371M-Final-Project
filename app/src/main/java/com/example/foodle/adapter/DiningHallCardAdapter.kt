@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodle.FoodDishActivity
 import com.example.foodle.R
@@ -21,7 +22,7 @@ class
 
 DiningHallCardAdapter(
     private val context: Context?,
-    private val layout: Int
+    private val layout: Int,
 ): RecyclerView.Adapter<DiningHallCardAdapter.FoodCardViewHolder>() {
 
     // Initialize the data using the List found in data/DataSource
@@ -37,7 +38,7 @@ DiningHallCardAdapter(
         val dishAllergens: TextView = view!!.findViewById(R.id.food_allergen)
 //        // Declare and initialize the fruit's common dishes
 //        val fruitDishes: TextView = view!!.findViewById(R.id.fruit_dishes)
-        val card = view?.findViewById<MaterialCardView>(R.id.dining_hall_card)
+        val card = view?.findViewById<CardView>(R.id.dining_hall_card)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodCardViewHolder {

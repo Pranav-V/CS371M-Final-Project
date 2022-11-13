@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,38 +7,42 @@
     android:layout_height="match_parent"
     tools:context=".DiningHallActivity">
 
-    <ImageView
-        android:id="@+id/food_image"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:layout_height="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jcl" />
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        app:cardPreventCornerOverlap="true"
+        android:id="@+id/image_container"
+        >
+
+        <ImageView
+            android:id="@+id/food_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/jcl" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5sp"
-        android:text="Jester City Limits"
-        android:textColor="@color/white"
-        android:id="@+id/dining_hall_title"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/food_image" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5sp"
+        android:layout_margin="10sp"
         android:text="Friday, 28 October"
         android:textSize="24sp"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textStyle="bold"
         android:id="@+id/date"
-        app:layout_constraintTop_toBottomOf="@id/food_image" />
+        app:layout_constraintTop_toBottomOf="@id/image_container" />
 
     <RadioGroup
         android:id="@+id/courseButtonGroup"
@@ -46,7 +51,9 @@
         android:checkedButton="@id/breakfast_button"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date">
+        app:layout_constraintTop_toBottomOf="@id/date"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
         <RadioButton
             android:id="@+id/breakfast_button"
@@ -74,7 +81,9 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/courseButtonGroup"
-        app:layout_constraintVertical_weight="1">
+        app:layout_constraintVertical_weight="1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/foodRecyclerView"

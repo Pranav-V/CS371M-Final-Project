@@ -2,104 +2,153 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:id="@+id/mainContainer">
+    android:backgroundTint="@color/md_theme_light_secondary"
+    tools:context=".MainActivity">
 
     <!-- Begin Tutorial: https://www.youtube.com/watch?v=do4vb0MdLFY -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/food_image"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="200sp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
+            android:layout_height="200dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/cookout" />
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:elevation="@dimen/cardview_compat_inset_shadow"
+            app:cardPreventCornerOverlap="true"
+            android:id="@+id/image_container"
+            >
+            <ImageView
+                android:id="@+id/food_image"
+                style="material3round"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cookout"
+                 />
+        </androidx.cardview.widget.CardView>
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/food_image"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:orientation="vertical">
+            app:layout_constraintTop_toBottomOf="@id/image_container"
+            android:layout_marginTop="5dp">
 
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="500dp"
                 android:columnCount="2"
                 android:padding="10dp"
                 android:useDefaultMargins="true">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/jclbutton"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="JCL" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/jester_city_limits"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/j2button"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="J2" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/j2"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/fastj2button"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="FAST @ J2" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/fast_j2"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/kinsbutton"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="KINS" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/kins"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/jestapizzabutton"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="JESTA' PIZZA" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/jesta_pizza"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/littlefieldbutton"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="LITTLEFIELD CAFE" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/littlefield_cafe"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/cypressbendbutton"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:text="CYPRESS BEND CAFE" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/cypress_bend_cafe"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/jcmbutton"
+                    style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    android:background="#FFFFFF"
-                    android:text="JESTER CITY MARKET" />
+                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                    android:text="@string/jester_city_market"
+                    android:textColor="@color/md_theme_light_onSecondaryContainer"
+                    android:textSize="24sp" />
             </GridLayout>
 
         </RelativeLayout>
@@ -107,13 +156,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_drawer_menu"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:id="@+id/nav_view"/>
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_drawer_menu" />
     <!-- -->
 
 </androidx.drawerlayout.widget.DrawerLayout>

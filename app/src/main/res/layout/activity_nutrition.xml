@@ -24,7 +24,6 @@
         android:text="Mini Cinnamon Roll"
         android:textStyle="bold"
         android:textSize="36dp"
-        android:textColor="@color/black"
         android:layout_margin="8sp"/>
 
     <RelativeLayout
