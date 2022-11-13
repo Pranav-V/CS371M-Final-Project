@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,105 +7,113 @@
     tools:context=".MainActivity"
     android:id="@+id/mainContainer">
 
-    <ImageView
-        android:id="@+id/food_image"
+    <!-- Begin Tutorial: https://www.youtube.com/watch?v=do4vb0MdLFY -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/cookout" />
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_settings" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/food_image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical">
-
-        <GridLayout
+        <ImageView
+            android:id="@+id/food_image"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
-            android:columnCount="2"
-            android:padding="10dp"
-            android:useDefaultMargins="true">
+            android:layout_height="200sp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/cookout" />
 
-            <Button
-                android:id="@+id/jclbutton"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="JCL" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/food_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/j2button"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="J2" />
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:columnCount="2"
+                android:padding="10dp"
+                android:useDefaultMargins="true">
 
-            <Button
-                android:id="@+id/fastj2button"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="FAST @ J2" />
+                <Button
+                    android:id="@+id/jclbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="JCL" />
 
-            <Button
-                android:id="@+id/kinsbutton"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="KINS" />
+                <Button
+                    android:id="@+id/j2button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="J2" />
 
-            <Button
-                android:id="@+id/jestapizzabutton"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="JESTA' PIZZA" />
+                <Button
+                    android:id="@+id/fastj2button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="FAST @ J2" />
 
-            <Button
-                android:id="@+id/littlefieldbutton"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="LITTLEFIELD CAFE" />
+                <Button
+                    android:id="@+id/kinsbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="KINS" />
 
-            <Button
-                android:id="@+id/cypressbendbutton"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="CYPRESS BEND CAFE" />
+                <Button
+                    android:id="@+id/jestapizzabutton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="JESTA' PIZZA" />
 
-            <Button
-                android:id="@+id/jcmbutton"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="JESTER CITY MARKET" />
-        </GridLayout>
+                <Button
+                    android:id="@+id/littlefieldbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="LITTLEFIELD CAFE" />
 
-    </RelativeLayout>
+                <Button
+                    android:id="@+id/cypressbendbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:text="CYPRESS BEND CAFE" />
 
+                <Button
+                    android:id="@+id/jcmbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="#FFFFFF"
+                    android:text="JESTER CITY MARKET" />
+            </GridLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_drawer_menu"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:id="@+id/nav_view"/>
+    <!-- -->
+
+</androidx.drawerlayout.widget.DrawerLayout>

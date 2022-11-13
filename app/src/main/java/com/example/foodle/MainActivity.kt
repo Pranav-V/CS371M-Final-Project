@@ -1,14 +1,46 @@
 package com.example.foodle
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.MenuItem
 import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Ref: https://www.youtube.com/watch?v=do4vb0MdLFY
+        val drawerLayout = findViewById<DrawerLayout>(R.id.mainContainer)
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val navView = findViewById<NavigationView>(R.id.nav_view)
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.app_bar_switch -> {
+                    Toast.makeText(applicationContext, "Dark Mode Toggled", Toast.LENGTH_SHORT)
+                        .show()
+                    toggleDarkMode()
+                }
+                else -> Toast.makeText(applicationContext, "Error in NavDrawer", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
 
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
@@ -65,5 +97,16 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("diningHallName", "Jester City Market")
             startActivity(intent)
         }
+    }
+
+    private fun toggleDarkMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
