@@ -74,7 +74,7 @@ class DiningHallCardAdapter(
         val resources = context?.resources
 
         // Get the data at the current position
-        val item = getItem(position)
+        val item = data[position]
 
         val context = holder.view?.context
         holder.card?.setOnClickListener {
