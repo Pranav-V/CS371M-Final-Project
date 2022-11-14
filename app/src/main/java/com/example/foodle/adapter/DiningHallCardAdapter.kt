@@ -29,8 +29,7 @@ class DiningHallCardAdapter(
     private val layout: Int,
     private val diningHall: String,
     private val mealType: String,
-    private val meals:
-    MutableLiveData<List<FoodData>>
+    private val meals: List<FoodData>
 ): ListAdapter<FoodData, DiningHallCardAdapter.FoodCardViewHolder>(DiffCallback) {
 
 
@@ -69,7 +68,7 @@ class DiningHallCardAdapter(
     }
 
     // Returns the size of the data set
-    override fun getItemCount(): Int = data.value!!.size
+    override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: FoodCardViewHolder, position: Int) {
         val resources = context?.resources

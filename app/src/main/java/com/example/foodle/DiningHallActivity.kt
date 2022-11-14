@@ -12,7 +12,6 @@ import com.example.foodle.overview.OverviewViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class DiningHallActivity : AppCompatActivity() {
     private val viewModel: OverviewViewModel by viewModels()
 
@@ -23,14 +22,15 @@ class DiningHallActivity : AppCompatActivity() {
         val extras = intent.extras
         val diningHallName = extras?.get("diningHallName").toString()
         val rv = findViewById<RecyclerView>(R.id.foodRecyclerView)
-        rv.adapter = DiningHallCardAdapter(
-            applicationContext,
-            0,
-            diningHallName,
-            "breakfast",
-            viewModel.kinsData["breakfast"]!!
-        )
-
+        rv.adapter = viewModel.kinsBreakfast.value?.let {
+            DiningHallCardAdapter(
+                applicationContext,
+                0,
+                diningHallName,
+                "breakfast",
+                it
+            )
+        }
 
 //        val diningHallTitle = findViewById<TextView>(R.id.dining_hall_title)
 //        diningHallTitle.text = diningHallName
