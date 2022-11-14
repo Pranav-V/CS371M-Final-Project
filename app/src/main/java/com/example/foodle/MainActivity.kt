@@ -16,12 +16,13 @@ import okhttp3.*
 import java.io.File
 import java.io.IOException
 import java.net.URL
+import java.util.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var toggle: ActionBarDrawerToggle
-    private val viewModel: OverviewViewModel by viewModels()
+//    private val viewModel: OverviewViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -135,30 +135,26 @@ class OverviewViewModel : ViewModel() {
      * Call getMarsPhotos() on init so we can display status immediately.
      */
     init {
-        getFoodData()
-        println(kinsBreakfast.toString())
     }
 
-    /**
-     * Gets Mars photos information from the Mars API Retrofit service and updates the
-     * [MarsPhoto] [List] [LiveData].
-     */
-    private fun getFoodData() {
+    fun getKinsData() {
         // kins
         viewModelScope.launch {
             try {
                 val breakfastResult = FoodApi.retrofitService.getKinsBreakfast()
                 _kinsBreakfast.value = breakfastResult
+                Log.d("Kins123", breakfastResult.toString())
                 val lunchResult = FoodApi.retrofitService.getKinsBreakfast()
                 _kinsLunch.value = lunchResult
                 val dinnerResult = FoodApi.retrofitService.getKinsDinner()
                 _kinsDinner.value = dinnerResult
-                Log.d("Kins", breakfastResult.toString())
             } catch (e: Exception) {
-                Log.d("OverviewViewModel","Error fetching Kins food data: ${e.message}")
+                Log.d("OverviewViewModel", "Error fetching Kins food data: ${e.message}")
             }
         }
+    }
 
+    fun getJizzaData() {
         // jizza
         viewModelScope.launch {
             try {
@@ -169,24 +165,12 @@ class OverviewViewModel : ViewModel() {
                 val dinnerResult = FoodApi.retrofitService.getJizzaDinner()
                 _jestaBreakfast.value = dinnerResult
             } catch (e: Exception) {
-                Log.d("OverviewViewModel","Error fetching Jizza food data: ${e.message}")
+                Log.d("OverviewViewModel", "Error fetching Jizza food data: ${e.message}")
             }
         }
+    }
 
-        // jizza
-        viewModelScope.launch {
-            try {
-                val breakfastResult = FoodApi.retrofitService.getJizzaBreakfast()
-                _jestaBreakfast.value = breakfastResult
-                val lunchResult = FoodApi.retrofitService.getJizzaLunch()
-                _jestaBreakfast.value = lunchResult
-                val dinnerResult = FoodApi.retrofitService.getJizzaDinner()
-                _jestaBreakfast.value = dinnerResult
-            } catch (e: Exception) {
-                Log.d("OverviewViewModel","Error fetching Jizza food data: ${e.message}")
-            }
-        }
-
+    fun getJclData() {
         // jcl
         viewModelScope.launch {
             try {
@@ -197,10 +181,12 @@ class OverviewViewModel : ViewModel() {
                 val dinnerResult = FoodApi.retrofitService.getJclDinner()
                 _jclDinner.value = dinnerResult
             } catch (e: Exception) {
-                Log.d("OverviewViewModel","Error fetching JCL food data: ${e.message}")
+                Log.d("OverviewViewModel", "Error fetching JCL food data: ${e.message}")
             }
         }
+    }
 
+    fun getJ2Data() {
         // j2
         viewModelScope.launch {
             try {
@@ -211,10 +197,12 @@ class OverviewViewModel : ViewModel() {
                 val dinnerResult = FoodApi.retrofitService.getJ2Dinner()
                 _j2Dinner.value = dinnerResult
             } catch (e: Exception) {
-                Log.d("OverviewViewModel","Error fetching J2 food data: ${e.message}")
+                Log.d("OverviewViewModel", "Error fetching J2 food data: ${e.message}")
             }
         }
+    }
 
+    fun getLittlefieldData() {
         // littlefield
         viewModelScope.launch {
             try {
@@ -225,7 +213,7 @@ class OverviewViewModel : ViewModel() {
                 val dinnerResult = FoodApi.retrofitService.getLittlefieldDinner()
                 _littlefieldDinner.value = dinnerResult
             } catch (e: Exception) {
-                Log.d("OverviewViewModel","Error fetching J2 food data: ${e.message}")
+                Log.d("OverviewViewModel", "Error fetching J2 food data: ${e.message}")
             }
         }
     }

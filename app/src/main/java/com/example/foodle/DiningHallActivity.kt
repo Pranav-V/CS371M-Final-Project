@@ -1,6 +1,7 @@
 package com.example.foodle
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -9,8 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foodle.adapter.DiningHallCardAdapter
 import com.example.foodle.model.FoodData
 import com.example.foodle.overview.OverviewViewModel
+import kotlinx.coroutines.delay
+import java.lang.Thread.sleep
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class DiningHallActivity : AppCompatActivity() {
     private val viewModel: OverviewViewModel by viewModels()
@@ -19,18 +23,21 @@ class DiningHallActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dining_hall)
 
+        viewModel.getKinsData()
+        val meals = viewModel.kinsBreakfast
+        Thread.sleep(10000)
+        Log.d("Kins", meals.value.toString())
+
         val extras = intent.extras
         val diningHallName = extras?.get("diningHallName").toString()
         val rv = findViewById<RecyclerView>(R.id.foodRecyclerView)
-        rv.adapter = viewModel.kinsBreakfast.value?.let {
-            DiningHallCardAdapter(
-                applicationContext,
-                0,
-                diningHallName,
-                "breakfast",
-                it
-            )
-        }
+        rv.adapter = DiningHallCardAdapter(
+            applicationContext,
+            0,
+            diningHallName,
+            "breakfast",
+            meals.value!!
+        )
 
 //        val diningHallTitle = findViewById<TextView>(R.id.dining_hall_title)
 //        diningHallTitle.text = diningHallName
