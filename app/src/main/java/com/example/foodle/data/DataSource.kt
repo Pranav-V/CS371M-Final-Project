@@ -36,11 +36,5 @@ object DataSource {
         "Protein: 6g"
     )
 
-    val foods: List<FoodData> = listOf(
-        FoodData(
-            "Mini Cinnamon Roll",
-            "Milk, Eggs, Wheat, Soybeans",
-            "test"
-        )
-    )
+    val foods: List<FoodData> = listOf()
 }

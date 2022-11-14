@@ -2,6 +2,7 @@ package com.example.foodle
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
@@ -11,8 +12,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.foodle.model.FoodData
 import com.example.foodle.overview.OverviewViewModel
 import com.google.android.material.navigation.NavigationView
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.JsonNull.serializer
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,10 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
-            val intent = Intent(this, DiningHallActivity::class.java)
-            val foodListAsArray = viewModel.kinsDinner.value?.toTypedArray()
+            var intent = Intent(this, DiningHallActivity::class.java)
+            val foodData = viewModel.jclBreakfast.value
             intent.putExtra("diningHallName", "Jester City Limits")
-            intent.putExtra("data", foodListAsArray)
+            intent.putExtra("data", foodData as Parcelable)
             startActivity(intent)
         }
 
@@ -60,6 +66,8 @@ class MainActivity : AppCompatActivity() {
         j2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "J2")
+            val foodData = viewModel.j2Breakfast.value
+            intent.putExtra("data", foodData as Parcelable)
             startActivity(intent)
         }
 
@@ -67,13 +75,17 @@ class MainActivity : AppCompatActivity() {
         fastJ2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "Fast @ J2")
+            intent.putExtra("fileName", "j2_dinner.json")
             startActivity(intent)
         }
 
         val kinsButton = findViewById<Button>(R.id.kinsbutton)
         kinsButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
+            val data = viewModel.kinsDinner.value
+            val jsonList = Json.encodeToString(data)
             intent.putExtra("diningHallName", "Kins")
+            intent.putExtra("data", jsonList)
             startActivity(intent)
         }
 
@@ -81,6 +93,7 @@ class MainActivity : AppCompatActivity() {
         jestaPizzaButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "Jesta' Pizza")
+            intent.putExtra("fileName", "jizza.json")
             startActivity(intent)
         }
 
@@ -88,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         littlefieldButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "Littlefield Cafe")
+            intent.putExtra("fileName", "littlefield_dinner.json")
             startActivity(intent)
         }
 
@@ -95,6 +109,7 @@ class MainActivity : AppCompatActivity() {
         cypressbendButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "Cypress Bend Cafe")
+            intent.putExtra("fileName", "littlefield_dinner.json")
             startActivity(intent)
         }
 
@@ -102,6 +117,7 @@ class MainActivity : AppCompatActivity() {
         jcmButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "Jester City Market")
+            intent.putExtra("fileName", "jcl_dinner.json")
             startActivity(intent)
         }
     }

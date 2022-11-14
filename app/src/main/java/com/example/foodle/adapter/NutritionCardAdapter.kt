@@ -47,7 +47,7 @@ class NutritionCardAdapter(
         val resources = context?.resources
 
         // Get the data at the current position
-        val item = data[position]
+        val item = data?.get(position)
 
         val context = holder.view?.context
         // Perhaps make it open a Google Search query?
