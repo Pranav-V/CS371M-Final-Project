@@ -151,7 +151,7 @@ class OverviewViewModel : ViewModel() {
             try {
                 val breakfastResult = FoodApi.retrofitService.getKinsBreakfast()
                 _kinsBreakfast.value = breakfastResult
-                val lunchResult = FoodApi.retrofitService.getKinsBreakfast()
+                val lunchResult = FoodApi.retrofitService.getKinsLunch()
                 _kinsLunch.value = lunchResult
                 val dinnerResult = FoodApi.retrofitService.getKinsDinner()
                 _kinsDinner.value = dinnerResult

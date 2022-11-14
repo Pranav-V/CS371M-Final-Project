@@ -2,6 +2,7 @@ package com.example.foodle.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -78,8 +79,10 @@ class DiningHallCardAdapter(
 
         val context = holder.view?.context
         holder.card?.setOnClickListener {
-            val intent = Intent(context, FoodDishActivity::class.java)
-            context?.startActivity(intent)
+            val webIntent: Intent = Uri.parse(item.link).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+            }
+            context?.startActivity(webIntent)
         }
 
         // Set the image resource for the current fruit
