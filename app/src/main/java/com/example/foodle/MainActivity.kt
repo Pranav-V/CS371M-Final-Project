@@ -58,7 +58,11 @@ class MainActivity : AppCompatActivity() {
         jclButton.setOnClickListener {
             var intent = Intent(this, DiningHallActivity::class.java)
             val data = viewModel.jclDinner.value
-            val jsonList = Json.encodeToString(data)
+            val jsonList = when (Json.encodeToString(data)) {
+                "null" -> emptyListJsonString
+                "[]" -> emptyListJsonString
+                else -> Json.encodeToString(data)
+            }
             intent.putExtra("diningHallName", "Jester City Limits")
             intent.putExtra("data", jsonList)
             startActivity(intent)
@@ -69,7 +73,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "J2")
             val data = viewModel.j2Dinner.value
-            val jsonList = Json.encodeToString(data)
+            val jsonList = when (Json.encodeToString(data)) {
+                "null" -> emptyListJsonString
+                "[]" -> emptyListJsonString
+                else -> Json.encodeToString(data)
+            }
             intent.putExtra("data", jsonList)
             startActivity(intent)
         }
@@ -78,7 +86,11 @@ class MainActivity : AppCompatActivity() {
         fastJ2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             val data = viewModel.j2Dinner.value
-            val jsonList = Json.encodeToString(data)
+            val jsonList = when (Json.encodeToString(data)) {
+                "null" -> emptyListJsonString
+                "[]" -> emptyListJsonString
+                else -> Json.encodeToString(data)
+            }
             intent.putExtra("diningHallName", "Fast @ J2")
             intent.putExtra("data", jsonList)
             startActivity(intent)
