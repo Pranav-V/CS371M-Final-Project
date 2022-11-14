@@ -2,6 +2,7 @@ package com.example.foodle
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
@@ -12,21 +13,18 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.foodle.overview.OverviewViewModel
 import com.google.android.material.navigation.NavigationView
-import okhttp3.*
-import java.io.File
-import java.io.IOException
-import java.net.URL
-import java.util.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
+    private val viewModel: OverviewViewModel by viewModels()
 
     lateinit var toggle: ActionBarDrawerToggle
-//    private val viewModel: OverviewViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        viewModel.getData()
 
         // Ref: https://www.youtube.com/watch?v=do4vb0MdLFY
         val drawerLayout = findViewById<DrawerLayout>(R.id.mainContainer)
@@ -52,7 +50,9 @@ class MainActivity : AppCompatActivity() {
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
+            val foodListAsArray = viewModel.kinsDinner.value?.toTypedArray()
             intent.putExtra("diningHallName", "Jester City Limits")
+            intent.putExtra("data", foodListAsArray)
             startActivity(intent)
         }
 

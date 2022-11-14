@@ -17,26 +17,20 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class DiningHallActivity : AppCompatActivity() {
-    private val viewModel: OverviewViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dining_hall)
-
-        viewModel.getKinsData()
-        val meals = viewModel.kinsBreakfast
-        Thread.sleep(10000)
-        Log.d("Kins", meals.value.toString())
-
         val extras = intent.extras
+
         val diningHallName = extras?.get("diningHallName").toString()
+        val data: List<FoodData> = extras?.get("data")
         val rv = findViewById<RecyclerView>(R.id.foodRecyclerView)
         rv.adapter = DiningHallCardAdapter(
             applicationContext,
             0,
             diningHallName,
             "breakfast",
-            meals.value!!
+            data
         )
 
 //        val diningHallTitle = findViewById<TextView>(R.id.dining_hall_title)

@@ -1,96 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DiningHallActivity">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:elevation="@dimen/cardview_compat_inset_shadow"
-        app:cardPreventCornerOverlap="true"
-        android:id="@+id/image_container"
-        >
+        android:layout_height="match_parent"
+        tools:context=".DiningHallActivity">
 
-        <ImageView
-            android:id="@+id/food_image"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
+            android:layout_height="150dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/jcl" />
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:elevation="@dimen/cardview_compat_inset_shadow"
+            app:cardPreventCornerOverlap="true"
+            android:id="@+id/image_container"
+            >
 
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/food_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/jcl" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="Friday, 28 October"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:id="@+id/date"
-        app:layout_constraintTop_toBottomOf="@id/image_container" />
+        </androidx.cardview.widget.CardView>
 
-    <RadioGroup
-        android:id="@+id/courseButtonGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:checkedButton="@id/breakfast_button"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <RadioButton
-            android:id="@+id/breakfast_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Breakfast" />
-
-        <RadioButton
-            android:id="@+id/lunch_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lunch" />
-
-        <RadioButton
-            android:id="@+id/dinner_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dinner" />
-
-    </RadioGroup>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/courseButtonGroup"
-        app:layout_constraintVertical_weight="1"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/foodRecyclerView"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/dining_hall_food_item" />
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:text="Friday, 28 October"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:id="@+id/date"
+            app:layout_constraintTop_toBottomOf="@id/image_container" />
 
-    </RelativeLayout>
+        <RadioGroup
+            android:id="@+id/courseButtonGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/breakfast_button"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/breakfast_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breakfast" />
+
+            <RadioButton
+                android:id="@+id/lunch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch" />
+
+            <RadioButton
+                android:id="@+id/dinner_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinner" />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/courseButtonGroup"
+            app:layout_constraintVertical_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/foodRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/dining_hall_food_item"
+                />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

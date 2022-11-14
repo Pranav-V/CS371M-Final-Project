@@ -137,19 +137,27 @@ class OverviewViewModel : ViewModel() {
     init {
     }
 
+    fun getData() {
+        getKinsData()
+        getJizzaData()
+        getJclData()
+        getJ2Data()
+        getLittlefieldData()
+    }
+
     fun getKinsData() {
         // kins
         viewModelScope.launch {
             try {
                 val breakfastResult = FoodApi.retrofitService.getKinsBreakfast()
                 _kinsBreakfast.value = breakfastResult
-                Log.d("Kins123", breakfastResult.toString())
                 val lunchResult = FoodApi.retrofitService.getKinsBreakfast()
                 _kinsLunch.value = lunchResult
                 val dinnerResult = FoodApi.retrofitService.getKinsDinner()
                 _kinsDinner.value = dinnerResult
+                Log.d("test123", dinnerResult.toString())
             } catch (e: Exception) {
-                Log.d("OverviewViewModel", "Error fetching Kins food data: ${e.message}")
+                Log.d("test123", "Error fetching Kins food data: ${e.message}")
             }
         }
     }
