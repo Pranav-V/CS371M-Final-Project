@@ -5,28 +5,27 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.foodle.overview.OverviewViewModel
 import com.google.android.material.navigation.NavigationView
 import okhttp3.*
+import java.io.File
 import java.io.IOException
+import java.net.URL
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var toggle: ActionBarDrawerToggle
+    private val viewModel: OverviewViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        /////
-
-
-
-        /////
 
         // Ref: https://www.youtube.com/watch?v=do4vb0MdLFY
         val drawerLayout = findViewById<DrawerLayout>(R.id.mainContainer)

@@ -20,10 +20,8 @@ import androidx.annotation.DrawableRes
 /**
  * A data class to represent the information presented in the food card
  */
-data class Food(
-//    @DrawableRes val imageResourceId: Int,
+data class FoodData(
     val name: String,
-    val allergens: String,
-    val nutrition: List<String>,
-    val ingredients: String
+    val category: String,
+    val link: String
 )

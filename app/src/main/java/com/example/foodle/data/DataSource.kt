@@ -15,8 +15,7 @@
 */
 package com.example.foodle.data
 
-import com.example.foodle.R
-import com.example.foodle.model.Food
+import com.example.foodle.model.FoodData
 
 /**
  * An object to generate a static list of foods
@@ -37,30 +36,11 @@ object DataSource {
         "Protein: 6g"
     )
 
-    val foods: List<Food> = listOf(
-        Food(
+    val foods: List<FoodData> = listOf(
+        FoodData(
             "Mini Cinnamon Roll",
             "Milk, Eggs, Wheat, Soybeans",
-            cinnamonNutritionList,
-            ""
-        ),
-        Food(
-            "Housemade Hummus",
-            "None",
-            listOf(),
-            "cheese"
-        ),
-        Food(
-            "Candied Sweet Potatoes",
-            "Soybeans",
-            listOf(),
-            "cheese"
-        ),
-        Food(
-            "Mexican Lasagna",
-            "Milk, Eggs",
-            listOf(),
-            "cheese"
+            "test"
         )
     )
 }

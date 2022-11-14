@@ -2,27 +2,36 @@ package com.example.foodle
 
 import android.os.Bundle
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodle.adapter.DiningHallCardAdapter
+import com.example.foodle.model.FoodData
+import com.example.foodle.overview.OverviewViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class DiningHallActivity : AppCompatActivity() {
+    private val viewModel: OverviewViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dining_hall)
 
         val extras = intent.extras
+        val diningHallName = extras?.get("diningHallName").toString()
         val rv = findViewById<RecyclerView>(R.id.foodRecyclerView)
         rv.adapter = DiningHallCardAdapter(
             applicationContext,
-            0
+            0,
+            diningHallName,
+            "breakfast",
+            viewModel.kinsData["breakfast"]!!
         )
 
-        val diningHallName = extras?.get("diningHallName").toString()
+
 //        val diningHallTitle = findViewById<TextView>(R.id.dining_hall_title)
 //        diningHallTitle.text = diningHallName
 
