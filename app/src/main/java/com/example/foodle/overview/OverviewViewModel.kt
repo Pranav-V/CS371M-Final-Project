@@ -84,7 +84,7 @@ class OverviewViewModel : ViewModel() {
 
     // The external immutable LiveData for the request status
     val jclData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to jcmBreakfast,
+        "breakfast" to _jclBreakfast,
         "lunch" to _jclLunch,
         "dinner" to _jclDinner
     )

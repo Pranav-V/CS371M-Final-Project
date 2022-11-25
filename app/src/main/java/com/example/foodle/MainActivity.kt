@@ -6,6 +6,7 @@ import android.os.Parcelable
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
             var intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.jclDinner.value
+            val data = viewModel.jclData
             val jsonList = when (Json.encodeToString(data)) {
                 "null" -> emptyListJsonString
                 "[]" -> emptyListJsonString
@@ -99,7 +100,8 @@ class MainActivity : AppCompatActivity() {
         val kinsButton = findViewById<Button>(R.id.kinsbutton)
         kinsButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.kinsDinner.value
+            val data: List<List<FoodData>> =
+                listOf(viewModel.kinsBreakfast.value, viewModel.kinsLunch.value, viewModel.kinsDinner.value) as List<List<FoodData>>
             val jsonList = when (Json.encodeToString(data)) {
                 "null" -> emptyListJsonString
                 "[]" -> emptyListJsonString
@@ -107,6 +109,7 @@ class MainActivity : AppCompatActivity() {
             }
             intent.putExtra("diningHallName", "Kins")
             intent.putExtra("data", jsonList)
+            Log.d("dataList", jsonList)
             startActivity(intent)
         }
 
