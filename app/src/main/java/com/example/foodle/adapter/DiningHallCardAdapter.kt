@@ -3,6 +3,7 @@ package com.example.foodle.adapter
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,8 +33,6 @@ class DiningHallCardAdapter(
     private val mealType: String,
     private val meals: List<FoodData>
 ): ListAdapter<FoodData, DiningHallCardAdapter.FoodCardViewHolder>(DiffCallback) {
-
-
     // Initialize the data using the List found in data/DataSource
     private val data = meals
 
@@ -93,5 +92,9 @@ class DiningHallCardAdapter(
         holder.dishAllergens.text = item.category
         // Set the text for the current fruit's common dishes
 //        resources?.getString(R.string.fruit_taste, item.dishes).also { holder.fruitDishes.text = it }
+    }
+
+    private fun test() {
+        Log.d("DataTest", "Hello.")
     }
 }

@@ -25,7 +25,6 @@ import kotlinx.serialization.json.JsonNull.serializer
 class MainActivity : AppCompatActivity() {
     private val viewModel: OverviewViewModel by viewModels()
 
-    private val emptyListJsonString: String = """[{"name":"Couldn't query database","category":"Please check again later","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
     lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,14 +57,13 @@ class MainActivity : AppCompatActivity() {
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
             var intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.jclData
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
+            val breakfast = getJson(viewModel.jclBreakfast.value!!)
+            val lunch = getJson(viewModel.jclLunch.value!!)
+            val dinner = getJson(viewModel.jclDinner.value!!)
             intent.putExtra("diningHallName", "Jester City Limits")
-            intent.putExtra("data", jsonList)
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
 
@@ -73,101 +71,108 @@ class MainActivity : AppCompatActivity() {
         j2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "J2")
-            val data = viewModel.j2Dinner.value
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
-            intent.putExtra("data", jsonList)
+            val breakfast = getJson(viewModel.j2Breakfast.value!!)
+            val lunch = getJson(viewModel.j2Lunch.value!!)
+            val dinner = getJson(viewModel.j2Dinner.value!!)
+            intent.putExtra("diningHallName", "J2")
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
 
         val fastJ2Button = findViewById<Button>(R.id.fastj2button)
         fastJ2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.j2Dinner.value
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
+            val breakfast = getJson(viewModel.fastBreakfast.value!!)
+            val lunch = getJson(viewModel.fastLunch.value!!)
+            val dinner = getJson(viewModel.fastDinner.value!!)
             intent.putExtra("diningHallName", "Fast @ J2")
-            intent.putExtra("data", jsonList)
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
+//            Log.d("dataList", jsonList)
             startActivity(intent)
         }
 
         val kinsButton = findViewById<Button>(R.id.kinsbutton)
         kinsButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data: List<List<FoodData>> =
-                listOf(viewModel.kinsBreakfast.value, viewModel.kinsLunch.value, viewModel.kinsDinner.value) as List<List<FoodData>>
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
+            val breakfast = getJson(viewModel.kinsBreakfast.value!!)
+            val lunch = getJson(viewModel.kinsLunch.value!!)
+            val dinner = getJson(viewModel.kinsDinner.value!!)
             intent.putExtra("diningHallName", "Kins")
-            intent.putExtra("data", jsonList)
-            Log.d("dataList", jsonList)
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
+            Log.d("dataList", breakfast)
             startActivity(intent)
         }
 
         val jestaPizzaButton = findViewById<Button>(R.id.jestapizzabutton)
         jestaPizzaButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.jestaDinner.value
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
+            val breakfast = getJson(viewModel.jestaBreakfast.value!!)
+            val lunch = getJson(viewModel.jestaLunch.value!!)
+            val dinner = getJson(viewModel.jestaDinner.value!!)
             intent.putExtra("diningHallName", "Jesta' Pizza")
-            intent.putExtra("data", jsonList)
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
 
         val littlefieldButton = findViewById<Button>(R.id.littlefieldbutton)
         littlefieldButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.littlefieldDinner.value
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
+            val breakfast = getJson(viewModel.littlefieldBreakfast.value!!)
+            val lunch = getJson(viewModel.littlefieldLunch.value!!)
+            val dinner = getJson(viewModel.littlefieldDinner.value!!)
             intent.putExtra("diningHallName", "Littlefield Cafe")
-            intent.putExtra("data", jsonList)
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
 
         val cypressbendButton = findViewById<Button>(R.id.cypressbendbutton)
         cypressbendButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.kinsDinner.value
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
-            intent.putExtra("diningHallName", "Cypress Bend Cafe")
-            intent.putExtra("data", jsonList)
+            val breakfast = getJson(viewModel.cypressBreakfast.value!!)
+            val lunch = getJson(viewModel.cypressLunch.value!!)
+            val dinner = getJson(viewModel.cypressDinner.value!!)
+            intent.putExtra("diningHallName", "Kins")
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
 
         val jcmButton = findViewById<Button>(R.id.jcmbutton)
         jcmButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val data = viewModel.j2Dinner.value
-            val jsonList = when (Json.encodeToString(data)) {
-                "null" -> emptyListJsonString
-                "[]" -> emptyListJsonString
-                else -> Json.encodeToString(data)
-            }
-            intent.putExtra("diningHallName", "Jester City Market")
-            intent.putExtra("data", jsonList)
+            val breakfast = getJson(viewModel.jcmBreakfast.value!!)
+            val lunch = getJson(viewModel.jcmLunch.value!!)
+            val dinner = getJson(viewModel.jcmDinner.value!!)
+            intent.putExtra("diningHallName", "Kins")
+            intent.putExtra("breakfast", breakfast)
+            intent.putExtra("lunch", lunch)
+            intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
+    }
+
+    // Return the FoodData objects as a string for extra packing
+    private fun getJson(data: List<FoodData>): String {
+        val emptyListJsonString: String = """[{"name":"Couldn't query database","category":"Please check again later","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
+
+        val jsonList = when (Json.encodeToString(data)) {
+            "null" -> emptyListJsonString
+            "[]" -> emptyListJsonString
+            else -> Json.encodeToString(data)
+        }
+
+        return jsonList
     }
 
     private fun toggleDarkMode() {

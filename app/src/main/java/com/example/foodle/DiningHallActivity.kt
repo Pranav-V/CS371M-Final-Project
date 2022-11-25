@@ -4,6 +4,8 @@ import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NavUtils
@@ -30,7 +32,21 @@ class DiningHallActivity : AppCompatActivity() {
         val diningHallName = extras?.get("diningHallName").toString()
         // Set name of dining hall
         findViewById<TextView>(R.id.dining_hall_name).text = diningHallName
-        val data = Json.decodeFromString<List<FoodData>>(extras?.get("data").toString())
+        // Set date
+        setDate()
+
+        val radioButtonGroup: RadioGroup = findViewById(R.id.meal_selection_radio_group)
+        val mealType: String = findViewById<RadioButton>(radioButtonGroup.checkedRadioButtonId)
+            .text
+            .toString()
+            .lowercase()
+
+        val breakfastOptionButton: RadioButton = findViewById(R.id.breakfast_button)
+        val lunchOptionButton: RadioButton = findViewById(R.id.lunch_button)
+        val dinnerOptionButton: RadioButton = findViewById(R.id.dinner_button)
+
+        Log.d("dataName", mealType)
+        val data = Json.decodeFromString<List<FoodData>>(extras?.get(mealType).toString())
         val rv = findViewById<RecyclerView>(R.id.foodRecyclerView)
 
         rv.adapter =
@@ -38,11 +54,47 @@ class DiningHallActivity : AppCompatActivity() {
                 applicationContext,
                 0,
                 diningHallName,
-                "dinner",
+                mealType,
                 data
             )
 
-        setDate()
+        breakfastOptionButton.setOnClickListener {
+            val data = Json.decodeFromString<List<FoodData>>(extras?.get("breakfast").toString())
+
+            rv.adapter =
+                DiningHallCardAdapter(
+                    applicationContext,
+                    0,
+                    diningHallName,
+                    mealType,
+                    data
+                )
+        }
+
+        lunchOptionButton.setOnClickListener {
+            val data = Json.decodeFromString<List<FoodData>>(extras?.get("lunch").toString())
+
+            rv.adapter =
+                DiningHallCardAdapter(
+                    applicationContext,
+                    0,
+                    diningHallName,
+                    mealType,
+                    data
+                )
+        }
+
+        dinnerOptionButton.setOnClickListener {
+            val data = Json.decodeFromString<List<FoodData>>(extras?.get("dinner").toString())
+            rv.adapter =
+                DiningHallCardAdapter(
+                    applicationContext,
+                    0,
+                    diningHallName,
+                    mealType,
+                    data
+                )
+        }
 
         rv.layoutManager = LinearLayoutManager(this)
 
