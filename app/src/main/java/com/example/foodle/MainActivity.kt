@@ -164,8 +164,9 @@ class MainActivity : AppCompatActivity() {
 
     // Return the FoodData objects as a string for extra packing
     private fun getJson(data: List<FoodData>): String {
-        val emptyListJsonString: String = """[{"name":"Couldn't query database","category":"Please check again later","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
+        val emptyListJsonString: String = """[{"name":"Couldn't Query Database","category":"Please check again later","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
 
+        Log.d("getJson", "processing $data")
         val jsonList = when (Json.encodeToString(data)) {
             "null" -> emptyListJsonString
             "[]" -> emptyListJsonString

@@ -70,6 +70,36 @@ interface FoodApiService {
     @GET("retrieveMenuData?name=littlefield&meal=Dinner")
     suspend fun getLittlefieldDinner(): List<FoodData>
 
+    // JCM
+    @GET("retrieveMenuData?name=jcm&meal=Breakfast")
+    suspend fun getJcmBreakfast(): List<FoodData>
+
+    @GET("retrieveMenuData?name=jcm&meal=Lunch")
+    suspend fun getJcmLunch(): List<FoodData>
+
+    @GET("retrieveMenuData?name=jcm&meal=Dinner")
+    suspend fun getJcmDinner(): List<FoodData>
+
+    // Cypress Bend Cafe
+    @GET("retrieveMenuData?name=cypress&meal=Breakfast")
+    suspend fun getCypressBreakfast(): List<FoodData>
+
+    @GET("retrieveMenuData?name=cypress&meal=Lunch")
+    suspend fun getCypressLunch(): List<FoodData>
+
+    @GET("retrieveMenuData?name=cypress&meal=Dinner")
+    suspend fun getCypressDinner(): List<FoodData>
+
+    // Fast @ J2
+    @GET("retrieveMenuData?name=fast&meal=Breakfast")
+    suspend fun getFastBreakfast(): List<FoodData>
+
+    @GET("retrieveMenuData?name=fast&meal=Lunch")
+    suspend fun getFastLunch(): List<FoodData>
+
+    @GET("retrieveMenuData?name=fast&meal=Dinner")
+    suspend fun getFastDinner(): List<FoodData>
+
 }
 
 object FoodApi {

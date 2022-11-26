@@ -81,56 +81,6 @@ class OverviewViewModel : ViewModel() {
     val jcmLunch = _jcmLunch
     val jcmDinner = _jcmDinner
 
-
-    // The external immutable LiveData for the request status
-    val jclData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _jclBreakfast,
-        "lunch" to _jclLunch,
-        "dinner" to _jclDinner
-    )
-
-    val j2Data: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _j2Breakfast,
-        "lunch" to _j2Lunch,
-        "dinner" to _j2Dinner
-    )
-
-    val fastData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _fastBreakfast,
-        "lunch" to _fastLunch,
-        "dinner" to _fastDinner
-    )
-
-    val kinsData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _kinsBreakfast,
-        "lunch" to _kinsLunch,
-        "dinner" to _kinsDinner
-    )
-
-    val jestaData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _jestaBreakfast,
-        "lunch" to _jestaLunch,
-        "dinner" to _jestaDinner
-    )
-
-    val littlefieldData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _littlefieldBreakfast,
-        "lunch" to _littlefieldLunch,
-        "dinner" to _littlefieldDinner
-    )
-
-    val cypressData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _cypressBreakfast,
-        "lunch" to _cypressLunch,
-        "dinner" to _cypressDinner
-    )
-
-    val jcmData: Map<String, MutableLiveData<List<FoodData>>> = mapOf(
-        "breakfast" to _jcmBreakfast,
-        "lunch" to _jcmLunch,
-        "dinner" to _jcmDinner
-    )
-
     /**
      * Call getMarsPhotos() on init so we can display status immediately.
      */
@@ -141,6 +91,9 @@ class OverviewViewModel : ViewModel() {
         getKinsData()
         getJizzaData()
         getJclData()
+        getJcmData()
+        getCypressData()
+        getFastData()
         getJ2Data()
         getLittlefieldData()
     }
@@ -158,6 +111,73 @@ class OverviewViewModel : ViewModel() {
                 Log.d("test123", dinnerResult.toString())
             } catch (e: Exception) {
                 Log.d("test123", "Error fetching Kins food data: ${e.message}")
+                // Set empty values to prevent crashing
+                _kinsBreakfast.value = listOf(FoodData("", "", ""))
+                _kinsLunch.value = listOf(FoodData("", "", ""))
+                _kinsDinner.value = listOf(FoodData("", "", ""))
+            }
+        }
+    }
+
+    fun getJcmData() {
+        // Jester City Market
+        viewModelScope.launch {
+            try {
+                val breakfastResult = FoodApi.retrofitService.getJcmBreakfast()
+                _jcmBreakfast.value = breakfastResult
+                val lunchResult = FoodApi.retrofitService.getJcmLunch()
+                _jcmLunch.value = lunchResult
+                val dinnerResult = FoodApi.retrofitService.getJcmDinner()
+                _jcmDinner.value = dinnerResult
+                Log.d("test123", dinnerResult.toString())
+            } catch (e: Exception) {
+                Log.d("test123", "Error fetching JCM food data: ${e.message}")
+                // Set empty values to prevent crashing
+                _jcmBreakfast.value = listOf(FoodData("", "", ""))
+                _jcmLunch.value = listOf(FoodData("", "", ""))
+                _jcmDinner.value = listOf(FoodData("", "", ""))
+            }
+        }
+    }
+
+    fun getCypressData() {
+        // Cypress Bend Cafe
+        viewModelScope.launch {
+            try {
+                val breakfastResult = FoodApi.retrofitService.getCypressBreakfast()
+                _cypressBreakfast.value = breakfastResult
+                val lunchResult = FoodApi.retrofitService.getCypressLunch()
+                _cypressLunch.value = lunchResult
+                val dinnerResult = FoodApi.retrofitService.getCypressDinner()
+                _cypressDinner.value = dinnerResult
+                Log.d("test123", dinnerResult.toString())
+            } catch (e: Exception) {
+                Log.d("test123", "Error fetching Cypress food data: ${e.message}")
+                // Set empty values to prevent crashing
+                _cypressBreakfast.value = listOf(FoodData("", "", ""))
+                _cypressLunch.value = listOf(FoodData("", "", ""))
+                _cypressDinner.value = listOf(FoodData("", "", ""))
+            }
+        }
+    }
+
+    fun getFastData() {
+        // Fast @ J2
+        viewModelScope.launch {
+            try {
+                val breakfastResult = FoodApi.retrofitService.getFastBreakfast()
+                _fastBreakfast.value = breakfastResult
+                val lunchResult = FoodApi.retrofitService.getFastLunch()
+                _fastLunch.value = lunchResult
+                val dinnerResult = FoodApi.retrofitService.getFastDinner()
+                _fastDinner.value = dinnerResult
+                Log.d("test123", dinnerResult.toString())
+            } catch (e: Exception) {
+                Log.d("test123", "Error fetching Fast food data: ${e.message}")
+                // Set empty values to prevent crashing
+                _fastBreakfast.value = listOf(FoodData("", "", ""))
+                _fastLunch.value = listOf(FoodData("", "", ""))
+                _fastDinner.value = listOf(FoodData("", "", ""))
             }
         }
     }
@@ -169,11 +189,14 @@ class OverviewViewModel : ViewModel() {
                 val breakfastResult = FoodApi.retrofitService.getJizzaBreakfast()
                 _jestaBreakfast.value = breakfastResult
                 val lunchResult = FoodApi.retrofitService.getJizzaLunch()
-                _jestaBreakfast.value = lunchResult
+                _jestaLunch.value = lunchResult
                 val dinnerResult = FoodApi.retrofitService.getJizzaDinner()
-                _jestaBreakfast.value = dinnerResult
+                _jestaDinner.value = dinnerResult
             } catch (e: Exception) {
                 Log.d("OverviewViewModel", "Error fetching Jizza food data: ${e.message}")
+                _jestaBreakfast.value = listOf(FoodData("", "", ""))
+                _jestaLunch.value = listOf(FoodData("", "", ""))
+                _jestaDinner.value = listOf(FoodData("", "", ""))
             }
         }
     }
@@ -190,6 +213,9 @@ class OverviewViewModel : ViewModel() {
                 _jclDinner.value = dinnerResult
             } catch (e: Exception) {
                 Log.d("OverviewViewModel", "Error fetching JCL food data: ${e.message}")
+                _jclBreakfast.value = listOf(FoodData("", "", ""))
+                _jclLunch.value = listOf(FoodData("", "", ""))
+                _jclDinner.value = listOf(FoodData("", "", ""))
             }
         }
     }
@@ -206,6 +232,9 @@ class OverviewViewModel : ViewModel() {
                 _j2Dinner.value = dinnerResult
             } catch (e: Exception) {
                 Log.d("OverviewViewModel", "Error fetching J2 food data: ${e.message}")
+                _j2Breakfast.value = listOf(FoodData("", "", ""))
+                _j2Lunch.value = listOf(FoodData("", "", ""))
+                _j2Dinner.value = listOf(FoodData("", "", ""))
             }
         }
     }
@@ -221,7 +250,11 @@ class OverviewViewModel : ViewModel() {
                 val dinnerResult = FoodApi.retrofitService.getLittlefieldDinner()
                 _littlefieldDinner.value = dinnerResult
             } catch (e: Exception) {
-                Log.d("OverviewViewModel", "Error fetching J2 food data: ${e.message}")
+                Log.d("OverviewViewModel", "Error fetching Littlefield food data: ${e.message}")
+                _littlefieldBreakfast.value = listOf(FoodData("", "", ""))
+                _littlefieldLunch.value = listOf(FoodData("", "", ""))
+                _littlefieldDinner.value = listOf(FoodData("", "", ""))
+
             }
         }
     }
