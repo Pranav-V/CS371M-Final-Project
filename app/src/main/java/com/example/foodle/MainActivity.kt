@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity() {
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
             var intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.jclBreakfast.value!!)
-            val lunch = getJson(viewModel.jclLunch.value!!)
-            val dinner = getJson(viewModel.jclDinner.value!!)
+            val breakfast = getJson(viewModel.jclBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.jclLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.jclDinner.value!!, "dinner")
             intent.putExtra("diningHallName", "Jester City Limits")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
@@ -71,9 +71,9 @@ class MainActivity : AppCompatActivity() {
         j2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "J2")
-            val breakfast = getJson(viewModel.j2Breakfast.value!!)
-            val lunch = getJson(viewModel.j2Lunch.value!!)
-            val dinner = getJson(viewModel.j2Dinner.value!!)
+            val breakfast = getJson(viewModel.j2Breakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.j2Lunch.value!!, "lunch")
+            val dinner = getJson(viewModel.j2Dinner.value!!, "dinner")
             intent.putExtra("diningHallName", "J2")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
@@ -84,9 +84,9 @@ class MainActivity : AppCompatActivity() {
         val fastJ2Button = findViewById<Button>(R.id.fastj2button)
         fastJ2Button.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.fastBreakfast.value!!)
-            val lunch = getJson(viewModel.fastLunch.value!!)
-            val dinner = getJson(viewModel.fastDinner.value!!)
+            val breakfast = getJson(viewModel.fastBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.fastLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.fastDinner.value!!, "dinner")
             intent.putExtra("diningHallName", "Fast @ J2")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
@@ -98,9 +98,9 @@ class MainActivity : AppCompatActivity() {
         val kinsButton = findViewById<Button>(R.id.kinsbutton)
         kinsButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.kinsBreakfast.value!!)
-            val lunch = getJson(viewModel.kinsLunch.value!!)
-            val dinner = getJson(viewModel.kinsDinner.value!!)
+            val breakfast = getJson(viewModel.kinsBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.kinsLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.kinsDinner.value!!, "dinner")
             intent.putExtra("diningHallName", "Kins")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
@@ -112,9 +112,9 @@ class MainActivity : AppCompatActivity() {
         val jestaPizzaButton = findViewById<Button>(R.id.jestapizzabutton)
         jestaPizzaButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.jestaBreakfast.value!!)
-            val lunch = getJson(viewModel.jestaLunch.value!!)
-            val dinner = getJson(viewModel.jestaDinner.value!!)
+            val breakfast = getJson(viewModel.jestaBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.jestaLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.jestaDinner.value!!, "dinner")
             intent.putExtra("diningHallName", "Jesta' Pizza")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
@@ -125,9 +125,9 @@ class MainActivity : AppCompatActivity() {
         val littlefieldButton = findViewById<Button>(R.id.littlefieldbutton)
         littlefieldButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.littlefieldBreakfast.value!!)
-            val lunch = getJson(viewModel.littlefieldLunch.value!!)
-            val dinner = getJson(viewModel.littlefieldDinner.value!!)
+            val breakfast = getJson(viewModel.littlefieldBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.littlefieldLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.littlefieldDinner.value!!, "dinner")
             intent.putExtra("diningHallName", "Littlefield Cafe")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
@@ -138,10 +138,10 @@ class MainActivity : AppCompatActivity() {
         val cypressbendButton = findViewById<Button>(R.id.cypressbendbutton)
         cypressbendButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.cypressBreakfast.value!!)
-            val lunch = getJson(viewModel.cypressLunch.value!!)
-            val dinner = getJson(viewModel.cypressDinner.value!!)
-            intent.putExtra("diningHallName", "Kins")
+            val breakfast = getJson(viewModel.cypressBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.cypressLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.cypressDinner.value!!, "dinner")
+            intent.putExtra("diningHallName", "Cypress Bend Cafe")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
             intent.putExtra("dinner", dinner)
@@ -151,10 +151,10 @@ class MainActivity : AppCompatActivity() {
         val jcmButton = findViewById<Button>(R.id.jcmbutton)
         jcmButton.setOnClickListener {
             val intent = Intent(this, DiningHallActivity::class.java)
-            val breakfast = getJson(viewModel.jcmBreakfast.value!!)
-            val lunch = getJson(viewModel.jcmLunch.value!!)
-            val dinner = getJson(viewModel.jcmDinner.value!!)
-            intent.putExtra("diningHallName", "Kins")
+            val breakfast = getJson(viewModel.jcmBreakfast.value!!, "breakfast")
+            val lunch = getJson(viewModel.jcmLunch.value!!, "lunch")
+            val dinner = getJson(viewModel.jcmDinner.value!!, "dinner")
+            intent.putExtra("diningHallName", "Jester City Market")
             intent.putExtra("breakfast", breakfast)
             intent.putExtra("lunch", lunch)
             intent.putExtra("dinner", dinner)
@@ -163,8 +163,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Return the FoodData objects as a string for extra packing
-    private fun getJson(data: List<FoodData>): String {
-        val emptyListJsonString: String = """[{"name":"Couldn't Query Database","category":"Please check again later","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
+    private fun getJson(data: List<FoodData>, mealType: String): String {
+        val emptyListJsonString: String = """[{"name":"Food Not Served","category":"This dining hall is not serving $mealType today.","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
 
         Log.d("getJson", "processing $data")
         val jsonList = when (Json.encodeToString(data)) {
