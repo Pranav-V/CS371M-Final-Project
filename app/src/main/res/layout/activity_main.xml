@@ -8,139 +8,147 @@
     android:backgroundTint="@color/md_theme_light_secondary"
     tools:context=".MainActivity">
 
-    <!-- Begin Tutorial: https://www.youtube.com/watch?v=do4vb0MdLFY -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content" >
 
-        <RelativeLayout
+        <!-- Begin Tutorial: https://www.youtube.com/watch?v=do4vb0MdLFY -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            android:layout_marginTop="20dp">
+            >
 
-            <GridLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:columnCount="2"
-                android:padding="10dp"
-                android:useDefaultMargins="true">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="20dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/jclbutton"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/jester_city_limits"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:columnCount="2"
+                    android:padding="10dp"
+                    android:useDefaultMargins="true">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/j2button"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/j2"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/jclbutton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/jester_city_limits"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fastj2button"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/fast_j2"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/j2button"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/j2"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/kinsbutton"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/kins"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fastj2button"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/fast_j2"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/jestapizzabutton"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/jesta_pizza"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/kinsbutton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/kins"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/littlefieldbutton"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/littlefield_cafe"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/jestapizzabutton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/jesta_pizza"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/cypressbendbutton"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/cypress_bend_cafe"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/littlefieldbutton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/littlefield_cafe"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/jcmbutton"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:backgroundTint="@color/md_theme_light_secondaryContainer"
-                    android:text="@string/jester_city_market"
-                    android:textColor="@color/md_theme_light_onSecondaryContainer"
-                    android:textSize="24sp" />
-            </GridLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/cypressbendbutton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/cypress_bend_cafe"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
 
-        </RelativeLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/jcmbutton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                        android:text="@string/jester_city_market"
+                        android:textColor="@color/md_theme_light_onSecondaryContainer"
+                        android:textSize="24sp" />
+                </GridLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/microwave_map_button"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:backgroundTint="@color/md_theme_light_secondaryContainer"
-            android:text="@string/microwave_map"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/md_theme_light_onSecondaryContainer"
-            android:textSize="24sp" />
+            </RelativeLayout>
 
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/microwave_map_button"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                android:text="@string/microwave_map"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/md_theme_light_onSecondaryContainer"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
