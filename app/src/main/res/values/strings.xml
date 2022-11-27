@@ -25,4 +25,5 @@
     <string name="dish_name">Dish Name</string>
     <string name="food_category_placeholder">-- Chef\'s Picks --</string>
     <string name="view_nutritional_information">View Nutritional Information</string>
+    <string name="title">Foodle</string>
 </resources>
