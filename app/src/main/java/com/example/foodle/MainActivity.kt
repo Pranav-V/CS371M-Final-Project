@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.foodle.model.FoodData
 import com.example.foodle.overview.OverviewViewModel
+import com.google.android.material.color.DynamicColors
 import com.google.android.material.navigation.NavigationView
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.encodeToString

@@ -48,9 +48,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/jester_city_limits"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -60,9 +58,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/j2"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -72,9 +68,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/fast_j2"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -84,9 +78,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/kins"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -96,9 +88,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/jesta_pizza"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -108,9 +98,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/littlefield_cafe"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -120,9 +108,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/cypress_bend_cafe"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -132,9 +118,7 @@
                         android:layout_height="0dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:backgroundTint="@color/md_theme_light_secondaryContainer"
                         android:text="@string/jester_city_market"
-                        android:textColor="@color/md_theme_light_onSecondaryContainer"
                         android:textSize="24sp" />
                 </GridLayout>
 
@@ -145,12 +129,10 @@
                 style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:backgroundTint="@color/md_theme_light_secondaryContainer"
                 android:text="@string/microwave_map"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
-                android:textColor="@color/md_theme_light_onSecondaryContainer"
                 android:textSize="24sp" />
 
             <TextView
@@ -160,7 +142,6 @@
                 android:text="@string/view_menus_online"
                 android:layout_gravity="center"
                 app:drawableEndCompat="@drawable/ic_open"
-                android:textColor="@color/design_default_color_primary"
                 android:drawablePadding="5dp"
                 android:textSize="16sp"
                 android:layout_marginBottom="20dp"/>
