@@ -59,6 +59,7 @@ class MicrowaveMapActivity : AppCompatActivity() {
         return true
     }
 
+    // Handles the scaling for the zooming
     private inner class ScaleListener : SimpleOnScaleGestureListener() {
         override fun onScale(scaleGestureDetector: ScaleGestureDetector): Boolean {
             scaleFactor *= scaleGestureDetector.scaleFactor
