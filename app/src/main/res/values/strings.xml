@@ -18,4 +18,5 @@
     <string name="dinner">Dinner</string>
     <string name="placeholder_date">Friday, 28 October</string>
     <string name="placeholder_dininghall_name">Jester City Limits</string>
+    <string name="microwave_map">Microwave Map</string>
 </resources>

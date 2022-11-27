@@ -14,38 +14,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:cardCornerRadius="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:elevation="@dimen/cardview_compat_inset_shadow"
-            app:cardPreventCornerOverlap="true"
-            android:id="@+id/image_container"
-            >
-            <ImageView
-                android:id="@+id/food_image"
-                style="material3round"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/cookout"
-                 />
-        </androidx.cardview.widget.CardView>
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_container"
-            android:layout_marginTop="5dp">
+            app:layout_constraintTop_toBottomOf="parent"
+            android:layout_marginTop="20dp">
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -152,6 +127,18 @@
             </GridLayout>
 
         </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/microwave_map_button"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/md_theme_light_secondaryContainer"
+            android:text="@string/microwave_map"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/md_theme_light_onSecondaryContainer"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
