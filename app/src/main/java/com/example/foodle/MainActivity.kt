@@ -160,6 +160,13 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("dinner", dinner)
             startActivity(intent)
         }
+
+        // Button to show microwave map
+        val microwaveMapButton = findViewById<Button>(R.id.microwave_map_button)
+        microwaveMapButton.setOnClickListener {
+            val intent = Intent(this, MicrowaveMapActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // Return the FoodData objects as a string for extra packing
