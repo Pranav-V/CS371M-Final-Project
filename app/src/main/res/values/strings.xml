@@ -19,4 +19,7 @@
     <string name="placeholder_date">Friday, 28 October</string>
     <string name="placeholder_dininghall_name">Jester City Limits</string>
     <string name="microwave_map">Microwave Map</string>
+    <string name="redirect_text">Redirect to menu items in browser.</string>
+    <string name="view_online">View Online</string>
+    <string name="view_menus_online">View Menus Online</string>
 </resources>

@@ -1,12 +1,12 @@
 package com.example.foodle
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -16,13 +16,12 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.foodle.model.FoodData
 import com.example.foodle.overview.OverviewViewModel
 import com.google.android.material.navigation.NavigationView
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.JsonNull.serializer
 
 
 class MainActivity : AppCompatActivity() {
+    private val MENU_LINK: String = "http://hf-food.austin.utexas.edu/"
     private val viewModel: OverviewViewModel by viewModels()
 
     lateinit var toggle: ActionBarDrawerToggle
@@ -32,27 +31,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.getData()
-
-        // Ref: https://www.youtube.com/watch?v=do4vb0MdLFY
-        val drawerLayout = findViewById<DrawerLayout>(R.id.mainContainer)
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val navView = findViewById<NavigationView>(R.id.nav_view)
-        navView.setNavigationItemSelectedListener {
-            when(it.itemId) {
-                R.id.app_bar_switch -> {
-                    Toast.makeText(applicationContext, "Dark Mode Toggled", Toast.LENGTH_SHORT)
-                        .show()
-                    toggleDarkMode()
-                }
-                else -> Toast.makeText(applicationContext, "Error in NavDrawer", Toast.LENGTH_SHORT).show()
-            }
-            true
-        }
 
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
@@ -165,6 +143,13 @@ class MainActivity : AppCompatActivity() {
         val microwaveMapButton = findViewById<Button>(R.id.microwave_map_button)
         microwaveMapButton.setOnClickListener {
             val intent = Intent(this, MicrowaveMapActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Redirect to website menu version
+        val viewOnlineText = findViewById<TextView>(R.id.view_online_text)
+        viewOnlineText.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(MENU_LINK))
             startActivity(intent)
         }
     }
