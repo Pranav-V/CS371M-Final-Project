@@ -15,15 +15,16 @@
 */
 package com.example.foodle.model
 
-import androidx.annotation.DrawableRes
+import androidx.annotation.Keep
+import kotlinx.serialization.Serializable
 
 /**
  * A data class to represent the information presented in the food card
  */
-data class Food(
-//    @DrawableRes val imageResourceId: Int,
+@Keep
+@Serializable
+data class FoodData(
     val name: String,
-    val allergens: String,
-    val nutrition: List<String>,
-    val ingredients: String
+    val category: String,
+    val link: String
 )

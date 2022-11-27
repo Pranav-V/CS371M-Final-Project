@@ -15,8 +15,7 @@
 */
 package com.example.foodle.data
 
-import com.example.foodle.R
-import com.example.foodle.model.Food
+import com.example.foodle.model.FoodData
 
 /**
  * An object to generate a static list of foods
@@ -37,5 +36,5 @@ object DataSource {
         "Protein: 6g"
     )
 
-    val foods: List<Food> = listOf()
+    val foods: List<FoodData> = listOf()
 }

@@ -23,7 +23,7 @@ class NutritionCardAdapter(
 
     // Initialize the data using the List found in data/DataSource
     // Hard coded cinnamon roll nutrition
-    private val data = DataSource.foods[0].nutrition
+    private val data = DataSource.foods[0].link
 
     /**
      * Initialize view elements
@@ -41,13 +41,13 @@ class NutritionCardAdapter(
     }
 
     // Returns the size of the data set
-    override fun getItemCount(): Int = data.size
+    override fun getItemCount(): Int = 0
 
     override fun onBindViewHolder(holder: NutritionCardViewHolder, position: Int) {
         val resources = context?.resources
 
         // Get the data at the current position
-        val item = data[position]
+        val item = data?.get(position)
 
         val context = holder.view?.context
         // Perhaps make it open a Google Search query?
@@ -59,6 +59,6 @@ class NutritionCardAdapter(
         // Set the image resource for the current fruit
 //        holder.fruitImage.setImageResource(item.imageResourceId)
         // Set the text for the current dish's name
-        holder.nutrition.text = item
+        holder.nutrition.text = "updated"
     }
 }
