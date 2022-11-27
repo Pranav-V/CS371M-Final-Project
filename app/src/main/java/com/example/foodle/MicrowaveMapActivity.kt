@@ -17,6 +17,9 @@ private lateinit var microwaveMapImage: ImageView
 private lateinit var scaleGestureDetector: ScaleGestureDetector
 private var scaleFactor = 1.0f
 
+// Ref: https://www.youtube.com/watch?v=x33dC7E_Lho
+// Allows for draggable functionality
+
 class MicrowaveMapActivity : AppCompatActivity() {
 
     private var xPos by Delegates.notNull<Float>()
@@ -43,11 +46,11 @@ class MicrowaveMapActivity : AppCompatActivity() {
         }
 
         if (motionEvent.action == MotionEvent.ACTION_MOVE) {
-            dx = motionEvent.x - xPos as Float
-            dy = motionEvent.y - yPos as Float
+            dx = motionEvent.x - xPos
+            dy = motionEvent.y - yPos
 
-            microwaveMapImage.x = microwaveMapImage.x + dx as Float
-            microwaveMapImage.y = microwaveMapImage.y + dy as Float
+            microwaveMapImage.x = microwaveMapImage.x + dx
+            microwaveMapImage.y = microwaveMapImage.y + dy
 
             xPos = motionEvent.x
             yPos = motionEvent.y
