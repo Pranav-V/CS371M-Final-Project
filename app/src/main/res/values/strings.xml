@@ -22,4 +22,7 @@
     <string name="redirect_text">Redirect to menu items in browser.</string>
     <string name="view_online">View Online</string>
     <string name="view_menus_online">View Menus Online</string>
+    <string name="dish_name">Dish Name</string>
+    <string name="food_category_placeholder">-- Chef\'s Picks --</string>
+    <string name="view_nutritional_information">View Nutritional Information</string>
 </resources>

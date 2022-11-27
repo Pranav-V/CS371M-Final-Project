@@ -152,7 +152,8 @@
                 app:drawableEndCompat="@drawable/ic_open"
                 android:textColor="@color/design_default_color_primary"
                 android:drawablePadding="5dp"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"/>
 
         </LinearLayout>
 
