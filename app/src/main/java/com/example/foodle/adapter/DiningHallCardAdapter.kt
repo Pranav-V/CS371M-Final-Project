@@ -80,7 +80,7 @@ class DiningHallCardAdapter(
         holder.foodName.text = item.name
         holder.foodName.contentDescription = item.name
         holder.foodCategory.text = item.category
-        holder.foodCategory.contentDescription = item.category
+        holder.foodCategory.contentDescription = item.category.replace("-", "")
         holder.redirect.contentDescription = "View Nutritional Information on the Web."
 
         if (item.name == "Food Not Served") {
