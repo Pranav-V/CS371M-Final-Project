@@ -190,8 +190,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun quickScale(button: Button) {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.25f)
-        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.25f)
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.5f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.5f)
         val animator = ObjectAnimator.ofPropertyValuesHolder(button, scaleX, scaleY)
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
