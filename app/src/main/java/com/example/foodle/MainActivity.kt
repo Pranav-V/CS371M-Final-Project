@@ -180,21 +180,28 @@ class MainActivity : AppCompatActivity() {
         val emptyListJsonString: String = """[{"name":"Food Not Served","category":"This dining hall is not serving $mealType today.","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]"""
 
         Log.d("getJson", "processing $data")
-        val jsonList = when (Json.encodeToString(data)) {
-            "null" -> emptyListJsonString
-            "[]" -> emptyListJsonString
-            else -> Json.encodeToString(data)
+        var jsonList = ""
+
+        if (data != null) {
+            jsonList = when (Json.encodeToString(data)) {
+                "null" -> emptyListJsonString
+                "[]" -> emptyListJsonString
+                else -> Json.encodeToString(data)
+            }
+        }
+        else {
+            jsonList = emptyListJsonString
         }
 
         return jsonList
     }
 
     private fun quickScale(button: Button) {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 2f)
-        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 2f)
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, -1.5f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f)
         val animator = ObjectAnimator.ofPropertyValuesHolder(button, scaleX, scaleY)
         animator.repeatCount = 1
-        animator.duration = 500
+        animator.duration = 600
         animator.repeatMode = ObjectAnimator.REVERSE
         animator.start()
     }

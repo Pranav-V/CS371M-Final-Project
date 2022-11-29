@@ -1,5 +1,7 @@
 package com.example.foodle.adapter
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -39,6 +41,8 @@ class DiningHallCardAdapter(
         val foodCategory: TextView = view!!.findViewById(R.id.food_category)
         val redirect: TextView = view!!.findViewById(R.id.nutrition_redirect_text)
         val card = view?.findViewById<CardView>(R.id.dining_hall_card)
+
+
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<FoodData>() {
@@ -70,8 +74,10 @@ class DiningHallCardAdapter(
 
         val context = holder.view?.context
         holder.card?.setOnClickListener {
+            val card: CardView = holder.card
+            quickScale(card)
             val webIntent: Intent = Uri.parse(item.link).let { webpage ->
-                    Intent(Intent.ACTION_VIEW, webpage)
+                Intent(Intent.ACTION_VIEW, webpage)
             }
             context?.startActivity(webIntent)
         }
@@ -86,6 +92,16 @@ class DiningHallCardAdapter(
         if (item.name == "Food Not Served") {
             holder.redirect.visibility = View.INVISIBLE
         }
+    }
+
+    private fun quickScale(item: CardView) {
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, -0.1f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, -0.1f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(item, scaleX, scaleY)
+        animator.repeatCount = 1
+        animator.duration = 600
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.start()
     }
 
     private fun test() {
