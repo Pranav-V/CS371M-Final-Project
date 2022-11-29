@@ -1,10 +1,14 @@
 package com.example.foodle
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
@@ -21,12 +25,14 @@ import com.google.android.material.color.DynamicColors
 import com.google.android.material.navigation.NavigationView
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.encodeToString
+import kotlin.reflect.jvm.internal.impl.types.TypeCheckerState.SupertypesPolicy.None
 
 
 class MainActivity : AppCompatActivity() {
     private val MENU_LINK: String = "http://hf-food.austin.utexas.edu/"
     private val viewModel: OverviewViewModel by viewModels()
 
+    var mp: MediaPlayer? = null
     lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         val jclButton = findViewById<Button>(R.id.jclbutton)
         jclButton.setOnClickListener {
+            quickScale(jclButton)
             var intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.jclBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.jclLunch.value!!, "lunch")
@@ -53,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         val j2Button = findViewById<Button>(R.id.j2button)
         j2Button.setOnClickListener {
+            quickScale(j2Button)
             val intent = Intent(this, DiningHallActivity::class.java)
             intent.putExtra("diningHallName", "J2")
             val breakfast = getJson(viewModel.j2Breakfast.value!!, "breakfast")
@@ -67,6 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         val fastJ2Button = findViewById<Button>(R.id.fastj2button)
         fastJ2Button.setOnClickListener {
+            quickScale(fastJ2Button)
             val intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.fastBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.fastLunch.value!!, "lunch")
@@ -81,6 +90,7 @@ class MainActivity : AppCompatActivity() {
 
         val kinsButton = findViewById<Button>(R.id.kinsbutton)
         kinsButton.setOnClickListener {
+            quickScale(kinsButton)
             val intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.kinsBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.kinsLunch.value!!, "lunch")
@@ -95,6 +105,7 @@ class MainActivity : AppCompatActivity() {
 
         val jestaPizzaButton = findViewById<Button>(R.id.jestapizzabutton)
         jestaPizzaButton.setOnClickListener {
+            quickScale(jestaPizzaButton)
             val intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.jestaBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.jestaLunch.value!!, "lunch")
@@ -108,6 +119,7 @@ class MainActivity : AppCompatActivity() {
 
         val littlefieldButton = findViewById<Button>(R.id.littlefieldbutton)
         littlefieldButton.setOnClickListener {
+            quickScale(littlefieldButton)
             val intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.littlefieldBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.littlefieldLunch.value!!, "lunch")
@@ -121,6 +133,7 @@ class MainActivity : AppCompatActivity() {
 
         val cypressbendButton = findViewById<Button>(R.id.cypressbendbutton)
         cypressbendButton.setOnClickListener {
+            quickScale(cypressbendButton)
             val intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.cypressBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.cypressLunch.value!!, "lunch")
@@ -134,6 +147,7 @@ class MainActivity : AppCompatActivity() {
 
         val jcmButton = findViewById<Button>(R.id.jcmbutton)
         jcmButton.setOnClickListener {
+            quickScale(jcmButton)
             val intent = Intent(this, DiningHallActivity::class.java)
             val breakfast = getJson(viewModel.jcmBreakfast.value!!, "breakfast")
             val lunch = getJson(viewModel.jcmLunch.value!!, "lunch")
@@ -148,6 +162,7 @@ class MainActivity : AppCompatActivity() {
         // Button to show microwave map
         val microwaveMapButton = findViewById<Button>(R.id.microwave_map_button)
         microwaveMapButton.setOnClickListener {
+            quickScale(microwaveMapButton)
             val intent = Intent(this, MicrowaveMapActivity::class.java)
             startActivity(intent)
         }
@@ -172,6 +187,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         return jsonList
+    }
+
+    private fun quickScale(button: Button) {
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.25f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.25f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(button, scaleX, scaleY)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.start()
     }
 
     private fun toggleDarkMode() {
