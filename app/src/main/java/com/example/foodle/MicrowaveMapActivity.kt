@@ -32,6 +32,7 @@ class MicrowaveMapActivity : AppCompatActivity() {
         setContentView(R.layout.activity_microwave_map)
         // Get a support ActionBar corresponding to this toolbar and enable the Up button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Microwave Map"
 
         microwaveMapImage = findViewById(R.id.microwave_map_image)
         scaleGestureDetector = ScaleGestureDetector(this, ScaleListener())
