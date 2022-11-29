@@ -34,9 +34,9 @@ class DiningHallCardAdapter(
      */
     class FoodCardViewHolder(val view: View?): RecyclerView.ViewHolder(view!!) {
         // Declare and initialize the fruit name
-        val dishName: TextView = view!!.findViewById(R.id.food_name)
+        val foodName: TextView = view!!.findViewById(R.id.food_name)
         // Declare and initialize the fruit color
-        val dishAllergens: TextView = view!!.findViewById(R.id.food_category)
+        val foodCategory: TextView = view!!.findViewById(R.id.food_category)
         val redirect: TextView = view!!.findViewById(R.id.nutrition_redirect_text)
         val card = view?.findViewById<CardView>(R.id.dining_hall_card)
     }
@@ -77,8 +77,11 @@ class DiningHallCardAdapter(
         }
 
 
-        holder.dishName.text = item.name
-        holder.dishAllergens.text = item.category
+        holder.foodName.text = item.name
+        holder.foodName.contentDescription = item.name
+        holder.foodCategory.text = item.category
+        holder.foodCategory.contentDescription = item.category
+        holder.redirect.contentDescription = "View Nutritional Information on the Web."
 
         if (item.name == "Food Not Served") {
             holder.redirect.visibility = View.INVISIBLE

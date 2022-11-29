@@ -78,19 +78,22 @@
                 android:id="@+id/breakfast_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/breakfast" />
+                android:text="@string/breakfast"
+                android:contentDescription="@string/breakfast"/>
 
             <RadioButton
                 android:id="@+id/lunch_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lunch" />
+                android:text="@string/lunch"
+                android:contentDescription="@string/lunch"/>
 
             <RadioButton
                 android:id="@+id/dinner_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dinner" />
+                android:text="@string/dinner"
+                android:contentDescription="@string/dinner"/>
 
         </RadioGroup>
 

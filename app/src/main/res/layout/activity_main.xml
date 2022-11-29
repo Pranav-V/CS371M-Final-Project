@@ -49,7 +49,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/jester_city_limits"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/jester_city_limits"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/j2button"
@@ -59,7 +60,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/j2"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/j2"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/fastj2button"
@@ -69,7 +71,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/fast_j2"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/fast_j2"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/kinsbutton"
@@ -79,7 +82,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/kins"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/kins"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/jestapizzabutton"
@@ -89,7 +93,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/jesta_pizza"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/jesta_pizza"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/littlefieldbutton"
@@ -99,7 +104,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/littlefield_cafe"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/littlefield_cafe"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/cypressbendbutton"
@@ -109,7 +115,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/cypress_bend_cafe"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/cypress_bend_cafe"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/jcmbutton"
@@ -119,7 +126,8 @@
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
                         android:text="@string/jester_city_market"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:contentDescription="@string/jester_city_market"/>
                 </GridLayout>
 
             </RelativeLayout>
@@ -133,7 +141,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:contentDescription="@string/microwave_map"/>
 
             <TextView
                 android:id="@+id/view_online_text"
